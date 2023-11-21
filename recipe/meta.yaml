@@ -68,9 +68,18 @@ test:
     - pip
 
 about:
-  summary: an AutoML library that builds, optimizes, and evaluates machine learning pipelines using domain-specific objective functions
+  home: https://evalml.alteryx.com
+  summary: |
+    an AutoML library that builds, optimizes, and evaluates machine learning pipelines using domain-specific objective
+    functions.
+  description: |
+    EvalML is an AutoML library that builds, optimizes, and evaluates machine learning pipelines using domain-specific
+    objective functions. Combined with Featuretools and Compose, EvalML can be used to create end-to-end supervised
+    machine learning solutions.
   license: BSD-3-Clause
   license_file: LICENSE
+  doc_url: https://evalml.alteryx.com
+  dev_url: https://github.com/alteryx/evalml
 
 extra:
   recipe-maintainers:
