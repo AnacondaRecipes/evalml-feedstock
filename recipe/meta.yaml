@@ -78,6 +78,7 @@ about:
     machine learning solutions.
   license: BSD-3-Clause
   license_file: LICENSE
+  license_family: BSD
   doc_url: https://evalml.alteryx.com
   dev_url: https://github.com/alteryx/evalml
 
