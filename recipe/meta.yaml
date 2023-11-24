@@ -37,7 +37,7 @@ requirements:
     - dask-core >=2022.2.0,!=2022.10.1
     - distributed >=2022.2.0,!=2022.10.1
     - featuretools >=1.16.0
-    - nlp-primitives >=2.9.0
+    - nlp_primitives >=2.9.0
     - networkx >=2.6,<3.2
     - plotly >=5.0.0
     - python-kaleido >=0.1.0
