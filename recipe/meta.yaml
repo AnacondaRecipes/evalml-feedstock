@@ -58,6 +58,7 @@ requirements:
     - packaging >=23.0
     - black >=22.3.0
     - holidays >=0.13,<0.21
+    - jupyter
 
 test:
   imports:
