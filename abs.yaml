@@ -7,3 +7,5 @@ channels:
 
 upload_channels:
   - sfe1ed40
+channels:
+  - https://staging.continuum.io/prefect/fs/vowpalwabbit-feedstock/pr2/a15ad10
