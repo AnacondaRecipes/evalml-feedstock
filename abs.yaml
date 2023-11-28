@@ -1,11 +1,2 @@
-channels:
-  - https://staging.continuum.io/prefect/fs/sse2neon-feedstock/pr1/2db7183
-  - https://staging.continuum.io/prefect/fs/armadillo-feedstock/pr1/5575912
-  - https://staging.continuum.io/prefect/fs/ensmallen-feedstock/pr1/b12f6f1
-  - https://staging.continuum.io/prefect/fs/superlu-feedstock/pr1/8b4d370
-  - https://staging.continuum.io/prefect/fs/vowpalwabbit-feedstock/pr2/1813450
-
 upload_channels:
   - sfe1ed40
-channels:
-  - https://staging.continuum.io/prefect/fs/vowpalwabbit-feedstock/pr2/a15ad10
