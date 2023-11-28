@@ -11,7 +11,7 @@ source:
 
 build:
   # skip these because of vowpalwabbit not supporting these
-  skip: True  # [win or s390x]
+  skip: True  # [win or s390x or py<38]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   number: 0
 
@@ -22,7 +22,7 @@ requirements:
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python
     - numpy >=1.22.0
     - pandas >=1.5.0,<2.1.0
     - scipy >=1.5.0
@@ -65,10 +65,19 @@ requirements:
 test:
   imports:
     - evalml
-  commands:
-    - pip check
   requires:
     - pip
+    - pytest >=7.1.2
+    - pytest-xdist >=2.1.0
+    - pytest-timeout >=1.4.2
+    # - nbval >=0.9.3
+    - ipython >=8.10.0,<8.12.1
+    - pyyaml >=5.4
+  source_files:
+    - evalml/tests
+  commands:
+    - pip check
+    - pytest -vv -n auto -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning evalml/tests 
 
 about:
   home: https://evalml.alteryx.com
