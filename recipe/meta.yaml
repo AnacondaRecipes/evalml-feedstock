@@ -22,7 +22,7 @@ requirements:
     - wheel
     - pip
   run:
-    - python >=3.8,<4
+    - python >=3.8
     - numpy >=1.22.0
     - pandas >=1.5.0,<2.1.0
     - scipy >=1.5.0
