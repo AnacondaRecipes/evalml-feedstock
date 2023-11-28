@@ -10,6 +10,8 @@ source:
   sha256: f1fdcd55591db2c71f36fd19564b4716d29dfa438bb5185f08af679d3a4147e3
 
 build:
+  # skip these because of vowpalwabbit not supporting these
+  skip: True  # [win or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed . -vv
   number: 0
 
