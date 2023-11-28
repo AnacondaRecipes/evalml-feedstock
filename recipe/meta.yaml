@@ -73,11 +73,13 @@ test:
     # - nbval >=0.9.3
     - ipython >=8.10.0,<8.12.1
     - pyyaml >=5.4
+    # extra
+    - prophet
   source_files:
     - evalml/tests
   commands:
     - pip check
-    - pytest -vv -n auto -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning evalml/tests 
+    - pytest -vv -n auto -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning evalml/tests 
 
 about:
   home: https://evalml.alteryx.com
