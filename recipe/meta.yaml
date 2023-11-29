@@ -62,6 +62,11 @@ requirements:
     - holidays >=0.13,<0.21
     - jupyter
 
+# Skip some tests:
+# AssertionError: assert '$PREFIX/lib/python3.9/site-packages/evalml' == '$SRC_DIR/evalml'
+{% set tests_to_skip = "test_get_evalml_root" %}
+
+
 test:
   imports:
     - evalml
@@ -70,6 +75,7 @@ test:
     - pytest >=7.1.2
     - pytest-xdist >=2.1.0
     - pytest-timeout >=1.4.2
+    # we do not have nbval
     # - nbval >=0.9.3
     - ipython >=8.10.0,<8.12.1
     - pyyaml >=5.4
@@ -77,9 +83,10 @@ test:
     - prophet
   source_files:
     - evalml/tests
+    - pyproject.toml
   commands:
     - pip check
-    - pytest -vv -n auto -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning evalml/tests 
+    - pytest -vv -n auto -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning -k "not({{ tests_to_skip }})" evalml/tests
 
 about:
   home: https://evalml.alteryx.com
