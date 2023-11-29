@@ -66,7 +66,7 @@ requirements:
 # AssertionError: assert '$PREFIX/lib/python3.9/site-packages/evalml' == '$SRC_DIR/evalml'
 {% set tests_to_skip = "test_get_evalml_root" %}
 # Something else not able to get the local dirs count
-{% set tests_to_skip = tests_to_skip + "or test_all_test_dirs_included" %}
+{% set tests_to_skip = tests_to_skip + " or test_all_test_dirs_included" %}
 
 
 test:
