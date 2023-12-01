@@ -82,7 +82,7 @@ requirements:
 # skipping other hard to debug tests
 {% set tests_to_skip = tests_to_skip + " or test_lda_numeric" %}  # [linux and x86_64]
 # skipping test failing on prefect on osx-arm64
-{% set tests_to_skip = tests_to_skip + " or test_results_getter" %}  # [(osx and arm64) or (linux and x86_64)]
+{% set tests_to_skip = tests_to_skip + " or test_results_getter" %}  # [osx or (linux and x86_64)]
 
 test:
   imports:
