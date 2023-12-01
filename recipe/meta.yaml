@@ -84,6 +84,7 @@ requirements:
 # skipping test failing on prefect on osx-arm64
 {% set tests_to_skip = tests_to_skip + " or test_results_getter" %}  # [osx or (linux and x86_64)]
 
+
 test:
   imports:
     - evalml
@@ -97,13 +98,15 @@ test:
     - ipython >=8.10.0,<8.12.1
     - pyyaml >=5.4
     # extra
-    - prophet
+    - prophet  # [py>38]
   source_files:
     - evalml/tests
     - pyproject.toml
   commands:
     - pip check
-    - pytest -vv -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning -k "not({{ tests_to_skip }})" evalml/tests
+    # skipping tests that depend on prophet for py38
+    - pytest -vv -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning -k "not({{ tests_to_skip }})" --ignore=evalml/tests/component_tests/test_prophet_regressor.py evalml/tests  # [py==38]
+    - pytest -vv -m "not skip_during_conda" -W ignore::DeprecationWarning -W ignore::PendingDeprecationWarning -k "not({{ tests_to_skip }})" evalml/tests  # [py>38]
 
 about:
   home: https://evalml.alteryx.com
