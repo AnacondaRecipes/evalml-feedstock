@@ -12,6 +12,7 @@ source:
 build:
   # skip these because of vowpalwabbit not supporting these
   skip: True  # [win or s390x or py<38]
+  skip: True  # [osx and x86_64 and py==38]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   number: 0
 
