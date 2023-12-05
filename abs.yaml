@@ -1,0 +1,6 @@
+upload_channels:
+  - sfe1ed40
+
+channels:
+    - sfe1ed40
+    - https://staging.continuum.io/prefect/fs/scikit-optimize-feedstock/pr3/9a0189d
